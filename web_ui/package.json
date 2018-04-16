@@ -1,0 +1,51 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "E2E test",
+  "scripts": {
+    "remove-allure": "rimraf ./allure-results",
+    "test:e2e": "mocha tools/testSetup.js \"e2e/**/*.spec.js\" --reporter progress --timeout 90000",
+    "selenium-start": "./node_modules/.bin/selenium-standalone.cmd start",
+    "selenium-install": "./node_modules/.bin/selenium-standalone.cmd install",
+    "test:e2e:teamcity": "npm run remove-allure && mocha tools/testSetup.js \"e2e/**/*.spec.js\" --reporter mocha-allure-teamcity-reporter --timeout 70000"
+  },
+  "author": "jana shishkina",
+  "license": "MIT",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "babel-cli": "6.11.4",
+    "babel-core": "6.11.4",
+    "babel-eslint": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "3.5.0",
+    "chai-as-promised": "6.0.0",
+    "chai-webdriver": "1.2.0",
+    "chai-webdriver-promised": "4.0.3",
+    "child_process": "^1.0.2",
+    "eslint": "3.19.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "1.16.0",
+    "eslint-plugin-mocha-only": "0.0.3",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-standard": "3.0.1",
+    "eslint-watch": "^2.1.14",
+    "fs": "0.0.1-security",
+    "mocha": "3.0.1",
+    "npm": "^5.7.1",
+    "selenium-webdriver": "3.3.0",
+    "mocha-allure-teamcity-reporter": "3.0.0",
+    "selenium-server": "3.8.1",
+    "selenium-standalone": "6.13.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "es2017",
+      "stage-2"
+    ]
+  }
+}
